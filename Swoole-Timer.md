@@ -18,7 +18,7 @@
 
 **我们设置了一个间隔时间的定时器,tick 会持续的触发,因为是以毫秒为单位的,所以这里的2000表示2秒执行一次,后面跟着一个匿名函数,表示时间到执行的逻辑部分,不用我多说了吧,看结果**
 
-​    ![Image text]<img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/timer-1.png" >
+​    <img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/timer-1.png" >
 ****
 
 **和预期的结果一样,现在我们使用匿名函数的 use 传点参数**
@@ -31,7 +31,7 @@ $num=1;
 });
 ```
 
-​    ![Image text]<img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/timer-2.png" >
+​    <img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/timer-2.png" >
 
 
 **可能初学者会有点奇怪,结果咋么都是2不加上去,很简单,每2秒执行一次闭包的逻辑,每次调用的结果和下一次没有任何关系,num 依然是被初始赋值的1,你想有关系也很简单,在$num 前面加&**
@@ -43,7 +43,7 @@ $num=1;
   //  echo date('Y-m-d H:i:s'). ' 每隔两秒我会执行一次 '.PHP_EOL;
 });
 ```
-​    ![Image text]<img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/timer-3.png" >
+​    <img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/timer-3.png" >
 
 ## :pencil2:after 
 
@@ -59,7 +59,9 @@ $timer = \Swoole\Timer::after(5000, function () {
 });
 
 ```
-​   ![Image text]<img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/timer-4.png" >
+
+
+​    <img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/timer-4.png" >
 
 **可以看到,过了五秒歇菜了.**
 
@@ -80,7 +82,7 @@ var_dump('高冷的我只打印这一句话').PHP_EOL;
 
 **可以看到定时器将不会去执行,但是请注意,这个函数并不能清除其他进程的定时器,只作用于当前进程,什么意思呢,让我们开启两个窗口,代表两个进程,然后先设置一个间隔2秒执行一次的定时器,先执行,执行完之后补上 clear,然后再另一个窗口中执行程序**
 
-​    ![Image text]<img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/timer-5.png" >
+​    <img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/timer-5.png" >
 
 **可以看到先执行窗口1 ,然后加上删除定时器的clear代码,再执行窗口2,可以看到窗口2的定时任务清除了,所以不执行,但是 clear 的作用也仅仅在当前进程内有效,影响不了其他进程.**
 
