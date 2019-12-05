@@ -147,6 +147,9 @@ $timer = \Swoole\Timer::tick(1000 * 10, function ($timer_id) use ($url, &$excel)
 
 ```
 
+​    <img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/timer-5.png" >
+
+
 ### 联系
 <a href="https://github.com/wuqinqiang/">
 公众号
