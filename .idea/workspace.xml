@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d85c7aa-ee92-410a-8686-359e2e48f58b" name="Default Changelist" comment="" />
+    <list default="true" id="4d85c7aa-ee92-410a-8686-359e2e48f58b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Task.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task/TaskClient.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task/TaskService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/swoole-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/task-1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Timer/swoole-timer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Timer/swoole-timer.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,33 +18,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Timer/swoole-timer.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Task/TaskService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
-              <caret line="45" selection-start-line="12" selection-end-line="45" />
+            <state relative-caret-position="680">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+        <entry file="file://$PROJECT_DIR$/Task/TaskClient.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="14" column="17" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Swoole-Timer.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="112">
-                <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <first_editor relative-caret-position="168">
+                <caret line="6" column="30" lean-forward="true" selection-end-line="159" selection-end-column="1" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Swoole-Timer.md">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="2306">
-                <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
+              <first_editor relative-caret-position="336">
+                <caret line="81" column="28" lean-forward="true" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
               </first_editor>
               <second_editor />
             </state>
@@ -44,6 +61,12 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>re</find>
+      <find>task</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,8 +76,11 @@
       <list>
         <option value="$PROJECT_DIR$/day-1/swoole-timer.php" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/Timer/swoole-timer.php" />
         <option value="$PROJECT_DIR$/Swoole-Timer.md" />
+        <option value="$PROJECT_DIR$/Timer/swoole-timer.php" />
+        <option value="$PROJECT_DIR$/Task/TaskClient.php" />
+        <option value="$PROJECT_DIR$/Task.md" />
+        <option value="$PROJECT_DIR$/Task/TaskService.php" />
       </list>
     </option>
   </component>
@@ -92,16 +118,6 @@
             <path>
               <item name="swooleForYou" type="b2602c69:ProjectViewProjectNode" />
               <item name="swooleForYou" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swooleForYou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swooleForYou" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="swooleForYou" type="b2602c69:ProjectViewProjectNode" />
-              <item name="swooleForYou" type="462c0819:PsiDirectoryNode" />
-              <item name="Timer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -150,18 +166,19 @@
       <workItem from="1575464838122" duration="2232000" />
       <workItem from="1575468332927" duration="972000" />
       <workItem from="1575469467274" duration="5115000" />
-      <workItem from="1575550265341" duration="1020000" />
+      <workItem from="1575550265341" duration="6102000" />
+      <workItem from="1575640845057" duration="2974000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9339000" />
+    <option name="totallyTimeSpent" value="17395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2991453" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35470086" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -182,7 +199,7 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25268477" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2991453" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -217,8 +234,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Timer/swoole-timer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="45" selection-start-line="12" selection-end-line="45" />
+        <state relative-caret-position="2072">
+          <caret line="74" column="6" selection-start-line="74" selection-start-column="6" selection-end-line="74" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/swoole/ide-helper/output/swoole/namespace/Server.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1484">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -232,13 +256,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Task/TaskClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="14" column="17" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Swoole-Timer.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="2306">
-            <caret line="146" lean-forward="true" selection-start-line="146" selection-end-line="146" />
+          <first_editor relative-caret-position="168">
+            <caret line="6" column="30" lean-forward="true" selection-end-line="159" selection-end-column="1" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="336">
+            <caret line="81" column="28" lean-forward="true" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task/TaskService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
