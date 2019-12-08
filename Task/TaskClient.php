@@ -9,7 +9,6 @@ go(function () {
         $client->send("hello world\n");
         // 打印接收到的消息
         echo $client->recv().PHP_EOL;
-
         sleep(2);
         // 关闭连接
         $client->close();

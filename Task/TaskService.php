@@ -22,7 +22,7 @@ $ser->on('Receive', function (\Swoole\Server $server, $fd, $from_id, $data) {
     echo '投递任务成功' . PHP_EOL;
 });
 
-$ser->on('task', function (\Swoole\Server $server, $task_id, $data) {
+$ser->on('task', function (\Swoole\Server $server, $task_id,$from_id, $data) {
     echo 'task任务id: ' . $task_id . PHP_EOL;
     sleep(2);
     $server->finish($data);

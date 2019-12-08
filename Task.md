@@ -5,8 +5,8 @@
 **在 swoole 中,投递一个异步的任务到 task_worker 中,这个函数是非阻塞的,worker 进程可以继续处理新的请求,使用 task 功能必须先配置 task_worker_num,表示的是开启多少个task 进程**
 
 
-**j接下来,先来看我们服务器的简易代码部分**
-## :pencil2:tick 
+**接下来,先来看我们服务器的简易代码部分**
+## :pencil2:task 
 
 ```php
 <?php
