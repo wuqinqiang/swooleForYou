@@ -25,21 +25,22 @@ class WebsocketServer
     public function onOpen(\Swoole\Server $server, $reuqest)
     {
         echo "路人: " . $reuqest->fd . ' 上线了' . PHP_EOL;
-        $this->server->push($reuqest->fd, '你已成功连接');
+        $this->server->push($reuqest->fd, json_encode(['message'=>'我来了啊','code'=>200]));
     }
 
     public function onMessage(\Swoole\Server $server, $frame)
     {
-        echo '路人: ' . $frame->fd . "发送消息{$frame->data}" . PHP_EOL;
-        $task_id = $this->server->task(json_decode($frame->data));
+        echo '路人: ' . $frame->fd . "发送消息 {$frame->data}" . PHP_EOL;
+        $task_id = $this->server->task(['message'=>$frame->data,'fd'=>$frame->fd]);
         echo "任务投递成功!任务id: " . $task_id;
     }
 
     public function onTask(\Swoole\Server $server, $task_id, $from_id, $data)
     {
+        var_dump($data).PHP_EOL;
         foreach ($this->server->connections as $fd) {
             if ($this->server->isEstablished($from_id)) {
-                $this->server->push($fd, json_encode($data));
+                $this->server->push($fd, json_encode(['message'=>$data['fd']." 说: ".$data['message']]));
             }
         }
         $this->server->finish($data);
