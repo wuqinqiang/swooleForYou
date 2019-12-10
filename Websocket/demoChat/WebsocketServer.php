@@ -24,23 +24,20 @@ class WebsocketServer
 
     public function onOpen(\Swoole\Server $server, $reuqest)
     {
-        echo "路人: " . $reuqest->fd . ' 上线了' . PHP_EOL;
-        $this->server->push($reuqest->fd, json_encode(['message'=>'我来了啊','code'=>200]));
+        $this->server->task(['message' => "路人: " . $reuqest->fd . '上线了']);
     }
 
     public function onMessage(\Swoole\Server $server, $frame)
     {
-        echo '路人: ' . $frame->fd . "发送消息 {$frame->data}" . PHP_EOL;
-        $task_id = $this->server->task(['message'=>$frame->data,'fd'=>$frame->fd]);
-        echo "任务投递成功!任务id: " . $task_id;
+        $task_id = $this->server->task(['message' => $frame->fd . ' 说' . $frame->data]);
+        echo "任务id:{$task_id}投递成功!".PHP_EOL;
     }
 
     public function onTask(\Swoole\Server $server, $task_id, $from_id, $data)
     {
-        var_dump($data).PHP_EOL;
         foreach ($this->server->connections as $fd) {
-            if ($this->server->isEstablished($from_id)) {
-                $this->server->push($fd, json_encode(['message'=>$data['fd']." 说: ".$data['message']]));
+            if ($this->server->isEstablished($fd)) {
+                $this->server->push($fd, json_encode(['message' => $data['message']]));
             }
         }
         $this->server->finish($data);
@@ -48,14 +45,14 @@ class WebsocketServer
 
     public function onFinish(\Swoole\Server $server, $task_id, $data)
     {
-        echo '任务: ' . $task_id . ' 执行完毕'.PHP_EOL;
+        echo '任务: ' . $task_id . ' 执行完毕' . PHP_EOL;
     }
 
-    public function onClose(\Swoole\Server $server,$fd)
+    public function onClose(\Swoole\Server $server, $fd)
     {
-        echo '游客: '.$fd.' 下线了'.PHP_EOL;
+        $this->server->task(['message' => '路人: ' . $fd . ' 下线了' . PHP_EOL]);
     }
 
 }
 
-$demo=new WebsocketServer();
+$demo = new WebsocketServer();

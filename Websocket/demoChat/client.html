@@ -47,7 +47,7 @@
             top: -26px;
             padding: 7px 15px;
             line-height: 12px;
-            font-size: 12px;
+            font-size: 30px;
             color: #f20606;
             background-color: #fff;
             white-space: nowrap;
@@ -78,6 +78,22 @@
         }
 
         .send-btn {
+            height: 38px;
+            line-height: 38px;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+            background: #93d0ea;
+            text-shadow: 1px 1px 1px #333;
+            border-radius: 5px;
+            margin: 0 20px 20px 0;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            padding: 5px 15px;
+        }
+
+        .send-all {
             height: 38px;
             line-height: 38px;
             text-align: center;
@@ -140,8 +156,7 @@
     let websocket = new WebSocket(wsServer);
 
     websocket.onopen = function (evt) {
-        console.log(11111);
-        createBarrage('我来了哈哈哈', true);
+
     };
 
     websocket.onclose = function (evt) {
@@ -149,9 +164,9 @@
     };
 
     websocket.onmessage = function (evt) {
-        console.log('Retrieved data from server: ' + evt.data);
         // 处理接收的消息
         let param = JSON.parse(evt.data);
+
         createBarrage(param.message, true);
     };
 
@@ -163,30 +178,39 @@
     let barrageArray = [
         {
             url: '用户头像',
-            text: '秋天爱美丽',
+            text: '初始化数据',
             level: 20
         },
-
-
+        {
+            url: '用户头像',
+            text: '初始化数据',
+            level: 20
+        },
+        {
+            url: '用户头像',
+            text: '初始化数据',
+            level: 20
+        },
     ];
     var barrageColorArray = [
-        '#0099CC', '#333333', '#009966', '#FFFF66', '#9933FF', '#FFFF99', '#CCCCFF', '#CC9933', '#FFFF66'
+        '#548B54', '#CD1076', '#EE2C2C', '#FF3030', '#9933FF', '#FFFF99', '#00CD00', '#008B8B', '#FFFF66'
     ];
     var barrageTipWidth = 50; //提示语的长度
 
     var barrageBoxWrap = document.querySelector('.barrage-container-wrap');
     ;
     var barrageBox = document.querySelector('.barrage-container');
-    var
-        inputBox = document.querySelector('.input');
+    var inputBox = document.querySelector('.input');
     var sendBtn = document.querySelector('.send-btn');
+
 
     //容器的宽高度
     var barrageWidth = ~~window.getComputedStyle(barrageBoxWrap).width.replace('px', '');
     var barrageHeight = ~~window.getComputedStyle(barrageBoxWrap).height.replace('px', '');
 
     //发送
-    function sendMsg() {
+    function sendMsg(type) {
+
         var inputValue = inputBox.value;
         inputValue.replace(/\ +/g, "");
 
@@ -194,9 +218,10 @@
             alert('请输入');
             return false;
         }
+
         websocket.send(inputValue);
         //生成弹幕
-       // createBarrage(inputValue, true);
+        // createBarrage(inputValue, true);
         inputBox.value = '';
     }
 
@@ -301,13 +326,15 @@
     });
 
     //点击发送
-    sendBtn.onclick = sendMsg;   //点击发送
+    sendBtn.onclick = function () {
+        sendMsg(2)
+    };   //点击发送
 
     //回车
     inputBox.onkeydown = function (e) {
         e = e || window.event;
         if (e.keyCode == 13) {
-            send();
+            sendMsg()
         }
     }
 

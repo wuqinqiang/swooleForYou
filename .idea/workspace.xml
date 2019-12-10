@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d85c7aa-ee92-410a-8686-359e2e48f58b" name="Default Changelist" comment="" />
+    <list default="true" id="4d85c7aa-ee92-410a-8686-359e2e48f58b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Websocket/demoChat/WebsocketServer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Websocket/demoChat/WebsocketServer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Websocket/demoChat/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/Websocket/demoChat/client.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,12 +13,34 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Websocket/demoChat/client.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="185" column="16" selection-start-line="185" selection-start-column="16" selection-end-line="185" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Websocket/demoChat/WebsocketServer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="743">
+              <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>re</find>
       <find>task</find>
+      <find>send-btn</find>
+      <find>barrage-container</find>
+      <find>size</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -30,6 +56,8 @@
         <option value="$PROJECT_DIR$/Task/TaskService.php" />
         <option value="$PROJECT_DIR$/Task.md" />
         <option value="$PROJECT_DIR$/Task/TaskClient.php" />
+        <option value="$PROJECT_DIR$/Websocket/demoChat/WebsocketServer.php" />
+        <option value="$PROJECT_DIR$/Websocket/demoChat/client.html" />
       </list>
     </option>
   </component>
@@ -50,9 +78,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="1625" />
-    <option name="height" value="1027" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -60,6 +87,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -67,11 +95,21 @@
               <item name="swoole-for" type="b2602c69:ProjectViewProjectNode" />
               <item name="swoole-for" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="swoole-for" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swoole-for" type="462c0819:PsiDirectoryNode" />
+              <item name="Websocket" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swoole-for" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swoole-for" type="462c0819:PsiDirectoryNode" />
+              <item name="Websocket" type="462c0819:PsiDirectoryNode" />
+              <item name="demoChat" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -117,17 +155,19 @@
       <workItem from="1575469467274" duration="5115000" />
       <workItem from="1575550265341" duration="6102000" />
       <workItem from="1575640845057" duration="3436000" />
-      <workItem from="1575905265432" duration="228000" />
+      <workItem from="1575905265432" duration="550000" />
+      <workItem from="1575966369753" duration="5005000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18085000" />
+    <option name="totallyTimeSpent" value="23412000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35897437" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.42632332" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -215,16 +255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Swoole-Timer.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="168">
-            <caret line="6" column="30" lean-forward="true" selection-end-line="159" selection-end-column="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Task/TaskClient.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
@@ -239,12 +269,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Swoole-Timer.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="168">
+            <caret line="6" column="30" lean-forward="true" selection-end-line="159" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Websocket/demoChat/WebsocketServer.php">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Websocket/demoChat/client.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8086" />
+        <state relative-caret-position="292">
+          <caret line="185" column="16" selection-start-line="185" selection-start-column="16" selection-end-line="185" selection-end-column="16" />
+        </state>
       </provider>
     </entry>
   </component>
