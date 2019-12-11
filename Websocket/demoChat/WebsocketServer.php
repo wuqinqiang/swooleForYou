@@ -6,12 +6,11 @@ class WebsocketServer
 
     public function __construct()
     {
-        $this->server = new \Swoole\WebSocket\Server('swoolefor', 9508);
+        $this->server = new \Swoole\WebSocket\Server('swoolefor.test', 9508);
         $this->server->set([
             'worker_num' => 4,
             'task_worker_num' => 3,
             'max_request' => 5,
-
         ]);
         $this->server->on('open', [$this, 'onOpen']);
         $this->server->on('message', [$this, 'onMessage']);
@@ -22,18 +21,32 @@ class WebsocketServer
     }
 
 
-    public function onOpen(\Swoole\Server $server, $reuqest)
+    public function onOpen($server, $reuqest)
     {
-        $this->server->task(['message' => "路人: " . $reuqest->fd . '上线了']);
+        $this->server->task(['message' => "路人: " . $reuqest->fd . '上线了', 'type' => 1]);
     }
 
-    public function onMessage(\Swoole\Server $server, $frame)
+    public function onMessage($server, $frame)
     {
-        $task_id = $this->server->task(['message' => $frame->fd . ' 说' . $frame->data]);
-        echo "任务id:{$task_id}投递成功!".PHP_EOL;
+        $info = json_decode($frame->data);
+        $task_id = $this->server->task(['message' => $frame->fd . ' 说' . $info->message, 'type' => $info->type]);
+        echo "任务id:{$task_id}投递成功!" . PHP_EOL;
     }
 
-    public function onTask(\Swoole\Server $server, $task_id, $from_id, $data)
+    public function onTask($server, $task_id, $from_id, $data)
+    {
+        if ($data['type'] == 3) {
+            \Swoole\Timer::tick(1000, function () use ($data) {
+                $this->sendAll($data);
+            });
+        } else {
+            $this->sendAll($data);
+
+        }
+    }
+
+
+    public function sendAll($data)
     {
         foreach ($this->server->connections as $fd) {
             if ($this->server->isEstablished($fd)) {
@@ -43,14 +56,14 @@ class WebsocketServer
         $this->server->finish($data);
     }
 
-    public function onFinish(\Swoole\Server $server, $task_id, $data)
+    public function onFinish( $server, $task_id, $data)
     {
         echo '任务: ' . $task_id . ' 执行完毕' . PHP_EOL;
     }
 
-    public function onClose(\Swoole\Server $server, $fd)
+    public function onClose($server, $fd)
     {
-        $this->server->task(['message' => '路人: ' . $fd . ' 下线了' . PHP_EOL]);
+        $this->server->task(['message' => '路人: ' . $fd . ' 下线了' . PHP_EOL, 'type' => 4]);
     }
 
 }

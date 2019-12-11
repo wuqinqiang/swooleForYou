@@ -146,6 +146,7 @@
     <div class="send-wrap">
         <input type="text" class="input" placeholder="弹幕发送">
         <span class="send-btn">发送</span>
+        <span class="send-all">批量弹幕</span>
     </div>
 </div>
 </body>
@@ -156,7 +157,7 @@
     let websocket = new WebSocket(wsServer);
 
     websocket.onopen = function (evt) {
-
+        console.log('连接成功');
     };
 
     websocket.onclose = function (evt) {
@@ -202,6 +203,7 @@
     var barrageBox = document.querySelector('.barrage-container');
     var inputBox = document.querySelector('.input');
     var sendBtn = document.querySelector('.send-btn');
+    var sendAll = document.querySelector('.send-all');
 
 
     //容器的宽高度
@@ -219,7 +221,9 @@
             return false;
         }
 
-        websocket.send(inputValue);
+       var data={'type':type,'message':inputValue};
+
+        websocket.send(JSON.stringify(data));
         //生成弹幕
         // createBarrage(inputValue, true);
         inputBox.value = '';
@@ -329,6 +333,11 @@
     sendBtn.onclick = function () {
         sendMsg(2)
     };   //点击发送
+
+    sendAll.onclick=function()
+    {
+        sendMsg(3);
+    }
 
     //回车
     inputBox.onkeydown = function (e) {
