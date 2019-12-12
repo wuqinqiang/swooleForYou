@@ -168,6 +168,7 @@
         // 处理接收的消息
         let param = JSON.parse(evt.data);
 
+        console.log(param.message);
         createBarrage(param.message, true);
     };
 

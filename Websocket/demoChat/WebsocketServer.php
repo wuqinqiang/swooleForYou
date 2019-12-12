@@ -29,24 +29,17 @@ class WebsocketServer
     public function onMessage($server, $frame)
     {
         $info = json_decode($frame->data);
-        $task_id = $this->server->task(['message' => $frame->fd . ' 说' . $info->message, 'type' => $info->type]);
+        if ($info->type == 3) {
+            $task_id = \Swoole\Timer::tick(200, function () use ($info, $frame) {
+                return $this->server->task(['message' => $frame->fd . ' 说' . $info->message]);
+            });
+        } else {
+            $task_id = $this->server->task(['message' => $frame->fd . ' 说' . $info->message]);
+        }
         echo "任务id:{$task_id}投递成功!" . PHP_EOL;
     }
 
     public function onTask($server, $task_id, $from_id, $data)
-    {
-        if ($data['type'] == 3) {
-            \Swoole\Timer::tick(1000, function () use ($data) {
-                $this->sendAll($data);
-            });
-        } else {
-            $this->sendAll($data);
-
-        }
-    }
-
-
-    public function sendAll($data)
     {
         foreach ($this->server->connections as $fd) {
             if ($this->server->isEstablished($fd)) {
@@ -56,7 +49,7 @@ class WebsocketServer
         $this->server->finish($data);
     }
 
-    public function onFinish( $server, $task_id, $data)
+    public function onFinish($server, $task_id, $data)
     {
         echo '任务: ' . $task_id . ' 执行完毕' . PHP_EOL;
     }
