@@ -1,7 +1,7 @@
 <?php
 
 
-$ser = new \Swoole\Server('127.0.0.1', 9504);
+$ser = new \Swoole\Server('127.0.0.1', 9505);
 $ser->set([
     'worker_num' => 3,
     'task_worker_num' => 4,
