@@ -19,6 +19,11 @@
 ****
 
 
+**参考地址**
+
+**https://wiki.swoole.com/wiki/page/p-process.html**
+
+**https://xueyuanjun.com/post/19737**
 
 
 
