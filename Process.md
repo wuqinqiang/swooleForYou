@@ -212,6 +212,13 @@ go(function () {
 **和预期一样,主进程又重新创建了一个新的子进程**
 
 
+
+
+**参考地址**
+
+**https://wiki.swoole.com/wiki/page/p-process.html**
+
+**https://xueyuanjun.com/post/19737**
 ### 联系
 <a href="https://github.com/wuqinqiang/">
 公众号
