@@ -8,7 +8,7 @@ go(function () {
         // 建立连接后发送内容
         $client->send("hello world\n");
         // 打印接收到的消息
-        echo $client->recv().PHP_EOL;
+        echo $client->recv() . PHP_EOL;
         sleep(2);
         // 关闭连接
         $client->close();
@@ -16,4 +16,5 @@ go(function () {
         echo "connect failed.";
     }
 });
+
 

@@ -6,10 +6,7 @@
 
 **下面我们模拟一个TCP服务器,演示一下基于 `process` 的多进程服务.**
 
-**接下来,先来看我们服务器的简易代码部分**
-## :pencil2:task 
-
-**我们设置子进程数为3个,在下面这段代码中,主进程启动之后,会额外启动3个子进程,处理客户端连接以及请求的信息,当子进程退出后,主进程会重新创建新的子进程.如果主进程退出,那么子进程在处理完当前请求之后也会退出**
+**接下来,先来看我们服务器的简易代码部分.我们设置子进程数为3个,在下面这段代码中,主进程启动之后,会额外启动3个子进程,负责处理客户端连接以及请求操作,当子进程退出后,主进程会重新创建新的子进程.如果主进程退出,那么子进程在处理完当前请求之后也会退出**
 
 
 ## :pencil2:Server
@@ -179,7 +176,8 @@ $server->run();
 
 **开启服务之后,你可以通过命令查看进程 `pstree -p 主进程id` 或者通过命令查看运行的更多信息 `ps -ef | grep Server.php`,可以看到对应进程的 pid**
 
-​    <img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/process.gif" >
+​    <img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/process-2.png" >
+
 
 **现在让我们创建一个简单的客户端连接服务器.**
 
@@ -203,7 +201,8 @@ go(function () {
 });
 ```
 
-​<img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/process.gif" >
+​    <img src="https://github.com/wuqinqiang/swooleForYou/blob/master/image/process.gif" >
+
 
 **客户端请求,服务端接收数据,服务端响应数据,客户端接收数据,然后我们来手动的kill掉其中的一个子进程**
 
@@ -214,7 +213,7 @@ go(function () {
 
 
 
-**参考地址**
+**参考资料**
 
 **https://wiki.swoole.com/wiki/page/p-process.html**
 
