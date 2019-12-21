@@ -1,5 +1,10 @@
 <?php
 
+
+/**
+ * Class Server
+ * 没有进程间通讯
+ */
 class Server
 {
     private $mpid; //主进程id
@@ -51,6 +56,7 @@ class Server
         \Swoole\Process::daemon();
 
         $process->start();
+
     }
 
 
